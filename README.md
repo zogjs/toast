@@ -22,7 +22,7 @@ Since Zog.js is a lightweight setup, simply download `zog-toast.js` and add it t
 
 ```javascript
 import { use, createApp } from './path/to/zog.js';
-import { ZogToast } from './path/to/zog-toast.js';
+import { ZogToast } from '@zogjs/toast';
 ```
 
 ## 🛠 Usage
@@ -32,8 +32,8 @@ In your main application entry point (e.g., `main.js`), register the plugin usin
 
 ```javascript
 // main.js
-import { createApp, use } from 'zog.js';
-import { ZogToast } from './zog-toast.js';
+import { createApp, use } from 'zogjs';
+import { ZogToast } from '@zogjs/toast';
 
 // Install with options
 use(ZogToast, {
