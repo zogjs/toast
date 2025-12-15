@@ -18,7 +18,9 @@ A lightweight, elegant, and fully reactive toast notification system designed sp
 
 ## 🚀 Installation
 
-Since Zog.js is a lightweight setup, simply download `zog-toast.js` and add it to your project folder.
+```bash
+npm install zogjs @zogjs/toast
+```
 
 ```javascript
 import { use, createApp } from 'zogjs';
