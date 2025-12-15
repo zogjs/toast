@@ -1,15 +1,47 @@
 {
-  "name": "zog-toast",
-  "version": "1.0.0",
+  "name": "@zogjs/toast",
+  "version": "0.1.1",
+  "description": "A lightweight, dependency-free toast notification plugin for Zog.js.",
+  "type": "module",
   "main": "./dist/zog-toast.umd.js",
   "module": "./dist/zog-toast.es.js",
   "types": "./src/zog-toast.d.ts",
+  "exports": {
+    ".": {
+      "types": "./src/zog-toast.d.ts",
+      "import": "./dist/zog-toast.es.js",
+      "require": "./dist/zog-toast.umd.js"
+    }
+  },
   "files": [
     "dist",
-    "./src/zog-toast.d.ts"
+    "src/zog-toast.d.ts"
   ],
+  "publishConfig": {
+    "access": "public",
+    "registry": "https://registry.npmjs.org/"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/zogjs/toast.git"
+  },
+  "homepage": "https://zogjs.com",
+  "bugs": {
+    "url": "https://github.com/zogjs/toast/issues"
+  },
+  "keywords": [
+    "zogjs",
+    "toast",
+    "notification",
+    "plugin",
+    "alert",
+    "ui"
+  ],
+  "author": "ZogJS Team",
+  "license": "MIT",
   "scripts": {
-    "build": "vite build"
+    "build": "vite build",
+    "prepublishOnly": "npm run build"
   },
   "devDependencies": {
     "terser": "^5.44.1",
