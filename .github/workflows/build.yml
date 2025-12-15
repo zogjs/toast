@@ -1,0 +1,40 @@
+name: Build ZogToast
+
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    # 1. Checkout the repository code
+    - name: Checkout repository
+      uses: actions/checkout@v4
+
+    # 2. Setup Node.js environment
+    - name: Set up Node.js
+      uses: actions/setup-node@v4
+      with:
+        node-version: '20'
+        cache: 'npm'
+
+    # 3. Install dependencies (including vite and terser)
+    # 'npm ci' is faster and more reliable than 'npm install' for CI/CD
+    - name: Install dependencies
+      run: npm ci
+
+    # 4. Run the build command defined in package.json
+    - name: Run Build
+      run: npm run build
+
+    # 5. Upload the 'dist' folder as an artifact
+    # You can download this zip file from the GitHub Actions summary page
+    - name: Upload Build Artifact
+      uses: actions/upload-artifact@v4
+      with:
+        name: zog-toast-dist
+        path: dist/
