@@ -32,7 +32,7 @@ In your main application entry point (e.g., `main.js`), register the plugin usin
 
 ```javascript
 // main.js
-import { createApp, use } from './zog.js';
+import { createApp, use } from 'zog.js';
 import { ZogToast } from './zog-toast.js';
 
 // Install with options
