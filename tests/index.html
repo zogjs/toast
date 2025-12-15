@@ -26,7 +26,7 @@
     <script type="module">
         import { createApp, use } from 'https://cdn.zogjs.com/zog.es.js'
 
-        import { ZogToast, $toast } from '/src/zog-toast.js';
+        import { ZogToast} from '/src/zog-toast.js';
 
         // 1. Install the Plugin
         use(ZogToast, {
@@ -36,8 +36,6 @@
 
         // 2. Setup your app
         createApp(() => {
-
-            $toast.success
 
             // You can use $toast here directly
             const showMessage = () => {
