@@ -4,7 +4,7 @@
 A lightweight, elegant, and fully reactive toast notification system designed specifically for **Zog.js**.
 
 ![License](https://img.shields.io/badge/license-MIT-blue.svg)
-![Size](https://img.shields.io/badge/size-1.5kb-green.svg)
+![Size](https://img.shields.io/badge/size-6kb-green.svg)
 ![Dependencies](https://img.shields.io/badge/dependencies-none-brightgreen)
 
 ## ✨ Features
@@ -21,7 +21,7 @@ A lightweight, elegant, and fully reactive toast notification system designed sp
 Since Zog.js is a lightweight setup, simply download `zog-toast.js` and add it to your project folder.
 
 ```javascript
-import { use, createApp } from './path/to/zog.js';
+import { use, createApp } from 'zogjs';
 import { ZogToast } from '@zogjs/toast';
 ```
 
