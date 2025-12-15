@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <div id="app">
+        <h1>Zog.js Toast Demo</h1>
+
+        <!-- Using the methods returned from setup -->
+        <button @click="showMessage">Show Success</button>
+        <button @click="showError">Show Error</button>
+
+        <!-- Using the global window.$toast directly -->
+        <button @click="$toast.warning('Warning: Low Battery')">
+            Show Warning
+        </button>
+    </div>
+
+
+    <script type="module">
+        import { createApp, use } from 'https://cdn.zogjs.com/zog.es.js'
+
+        import { ZogToast, $toast } from '/src/zog-toast.js';
+
+        // 1. Install the Plugin
+        use(ZogToast, {
+            defaultDuration: 4000, // Optional configuration
+            position: 'top-center'
+        });
+
+        // 2. Setup your app
+        createApp(() => {
+
+            $toast.success
+
+            // You can use $toast here directly
+            const showMessage = () => {
+                $toast.success('Operation completed successfully!');
+            };
+
+            const showError = () => {
+                $toast.error('Something went wrong.');
+            };
+
+            // Return methods to be used in the template
+            return {
+                showMessage,
+                showError,
+                // If you want to use $toast directly in template without window prefix,
+                // you can return it here, though window.$toast handles it automatically.
+                
+            };
+        }).mount('#app');
+
+    </script>
+
+</body>
+
+</html>
