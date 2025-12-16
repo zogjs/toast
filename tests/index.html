@@ -24,18 +24,14 @@
 
 
     <script type="module">
-        import { createApp, use } from 'https://cdn.zogjs.com/zog.es.js'
+        import { createApp } from 'https://cdn.zogjs.com/zog.es.js'
 
         import { ZogToast} from '/src/zog-toast.js';
 
-        // 1. Install the Plugin
-        use(ZogToast, {
-            defaultDuration: 4000, // Optional configuration
-            position: 'top-center'
-        });
+
 
         // 2. Setup your app
-        createApp(() => {
+        const app = createApp(() => {
 
             // You can use $toast here directly
             const showMessage = () => {
@@ -54,7 +50,14 @@
                 // you can return it here, though window.$toast handles it automatically.
                 
             };
-        }).mount('#app');
+        })
+        
+        app.use(ZogToast, {
+            defaultDuration: 4000, // Optional configuration
+            position: 'top-center'
+        })
+        
+        app.mount('#app');
 
     </script>
 
